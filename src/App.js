@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import NavBar from "./components/NavBar";
 import "./css/bootstrap.min.css";
+import "./css/estilo.css";
+import Footer from "./Footer";
+import Header from "./Header";
+import Main from "./Main";
 
-function app() {
+function App() {
     return (
-        <header>
-            <NavBar />
-            <h1>Busca el producto que tanto queres!!</h1>
-        </header>
+        <>
+            <Header />
+            <Main />
+            <Footer />
+        </>
     );
 }
 
-export default app;
+export default App;

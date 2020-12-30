@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Brand from "./brand";
+import Brand from "./Brand";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
     return (
         <nav class="navbar navbar-dark bg-dark">
             <Brand />
+            <CartWidget />
             <ul>
                 <li><a class="navbar-brand" href="home.html">Home</a></li>
                 <li><a class="navbar-brand" href="catalogo.html">Catalogo</a></li>
