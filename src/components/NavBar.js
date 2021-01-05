@@ -5,7 +5,7 @@ import CartWidget from "./CartWidget";
 
 function NavBar() {
     return (
-        <nav class="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark">
             <Brand />
             <CartWidget />
             <ul>

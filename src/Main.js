@@ -3,8 +3,10 @@ import ItemListContainer from './components/ItemListContainer';
 
 const Main = () => {
     return (
-        <main>
+        <main className="center">
+            
             <ItemListContainer greeting="Proximamente el catalogo aca!" />
+
             <div className="card">
                 <div class="card-header">
                     Carrito Web
