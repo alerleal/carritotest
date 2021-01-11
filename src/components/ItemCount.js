@@ -3,34 +3,35 @@ import React, { useState } from 'react';
 
 
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial}) => {
 
     const [contador, setContador] = useState(initial);
 
 
 
-    const aumentarContador = () => {
-
+    const sumarItem = () => {
+        if(contador < stock)
         setContador(contador + 1);
 
     };
 
 
-    const disminuirContador = () => {
+    const restarItem = () => {
+        if(contador > initial)
         setContador(contador - 1);
     };
 
     const agregarItem = () => {
-        return (<p></p>);
+        return (contador);
     }
 
     return (
 
         <div >
 
-            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={aumentarContador}> + </button>
+            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={sumarItem}> + </button>
             <p className="ItemCount" >El contador va {contador} </p>
-            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={disminuirContador}> - </button>
+            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={restarItem}> - </button>
             <br />
             <button className="ItemCount" type="button" class="btn btn-secondary" onClick={agregarItem}>Agregar al carrito</button>
         </div>
