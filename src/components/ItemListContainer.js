@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Item from './Item'
 import ItemCount from './ItemCount'
 import ItemList from './ItemList'
+import '../css/estilo.css'
 
 const ItemListContainer = ({ greeting, pelicula }) => {
 
@@ -28,10 +29,11 @@ const ItemListContainer = ({ greeting, pelicula }) => {
 
     return (
 
-        <div>
+        <div className ="center">
             <h1>{greeting}</h1>
             <ItemList pelicula={pelicula} />
-            <ItemCount stock="10" initial="1" />
+            <ItemCount  stock={10} initial={0} />
+            
         </div>
     )
 }

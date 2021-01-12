@@ -1,10 +1,9 @@
 import React from 'react';
-import Brand from './components/Brand';
 import NavBar from './components/NavBar';
 
 const Header = () => {
     return (
-        <header>
+        <header className="header">
             <NavBar />
         </header>
     )
