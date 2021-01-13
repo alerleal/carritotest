@@ -15,3 +15,24 @@
 
   }
 
+  .logo {
+    display: inline-block;
+    height: 100%;
+}
+
+.logo>img {
+    vertical-align: middle;
+		position: relative; 
+    top:1px; 
+}
+nav{
+    height: 200px;
+}
+
+.nav-wrapper{
+  background-color: #202020 !important;
+}
+
+footer{
+  background-color: #202020 !important;
+}

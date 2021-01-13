@@ -5,14 +5,14 @@ import CartWidget from "./CartWidget";
 
 function NavBar() {
     return (
-        <nav class="navbar navbar-dark bg-dark">
+        <nav className="nav-wrapper">
             <Brand />
             <CartWidget />
-            <ul>
-                <li><a class="navbar-brand" href="home.html">Home</a></li>
-                <li><a class="navbar-brand" href="catalogo.html">Catalogo</a></li>
-                <li><a class="navbar-brand" href="contacto.html">Contacto</a></li>
-                <li><a class="navbar-brand" href="quienessomos.html">Quienes Somos</a></li>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a  href="home.html">Home</a></li>
+                <li><a  href="catalogo.html">Catalogo</a></li>
+                <li><a  href="contacto.html">Contacto</a></li>
+                <li><a  href="quienessomos.html">Quienes Somos</a></li>
             </ul>
         </nav>
     );

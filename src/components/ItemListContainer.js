@@ -1,39 +1,44 @@
 import React, { useState, useEffect } from 'react'
-import Item from './Item'
-import ItemCount from './ItemCount'
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import '../css/estilo.css'
 
 const ItemListContainer = ({ greeting, pelicula }) => {
 
     const [cadaPelicula, setCadaPelicula] = useState([])
+    const { id } = useParams()
+
 
     useEffect(() => {
 
         let promesa = new Promise((resolve, rejected) => {
             setTimeout(() => {
                 resolve(pelicula)
-                console.log('cargo pelis')
+                console.log('Todo Ok')
             }, 2000)
         })
 
         promesa
             .then(resolve => {
-                console.log('Todo Ok')
+                if (id) {
+                    setCadaPelicula(resolve.filter(cadaPelicula => cadaPelicula.category === id))
+                } else {
+                    setCadaPelicula(resolve)
+                }
             })
             .catch(rejected => {
-                console.log('Para atras')
+                console.log(rejected)
             })
 
-    }, [])
+    }, [id])
 
     return (
 
-        <div className ="center">
+        <div className="center">
             <h1>{greeting}</h1>
-            <ItemList pelicula={pelicula} />
-            <ItemCount  stock={10} initial={0} />
-            
+            <ItemList pelicula={cadaPelicula} />
+
+
         </div>
     )
 }

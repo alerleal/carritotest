@@ -1,58 +1,44 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import ItemCount from "./ItemCount"
 
 
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
 
 
-    const verificadorID = ({ id }) => {
-        if (id == '01') {
-            alert(<div className="item" >
-                <p>Detalle pelicula Matrix</p>
 
-            </div>)
-
-        }
-        if (id == '02') {
-            <div className="item" >
-                <p>Detalle pelicula Blade  Runner</p>
-
-            </div>
-        }
-        if (id == '03') {
-            <div className="item" >
-                <p>Detalle pelicula 2001: Space Odissey</p>
-
-            </div>
-        }
-        if (id == '04') {
-            <div className="item" >
-                <p>Detalle pelicula Orange Clockwork</p>
-
-            </div>
-        }
-    }
 
     return (
-        <div className="container" >
+        <div className="mostrarItem">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src={pictureUrl}></img>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">{title}</h4>
+                            <p>{description}</p>
+                            <p>Precio: {price}</p>
+                        </div>
+                        <div>
+                            <p>Ver detalle...</p>
+                            <NavLink to={`/id/${id}`} class="large material-icons">keyboard_arrow_down</NavLink>
 
-            <img src={pictureUrl} height="350" width="290" />
-            <br />
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">{id}</button>
-            <br />
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">{title}</button>
-            <br />
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">{description}</button>
-            <br />
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">${price}</button>
-            <br />
-            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onClick={verificadorID}>Detalle</button>
+                        </div>
 
-            
+                    </div>
+                    <ItemCount stock={10} initial={0} />
+                </div>
+
+               
+            </div>
         </div>
-                
-        
-        
+
+
+
+
 
     )
 }

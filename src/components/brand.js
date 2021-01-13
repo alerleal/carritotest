@@ -4,7 +4,9 @@ import carritobrand from "./img/carritobrand.png"
 
 function Brand() {
     return (
-         <img src={carritobrand} alt="Carritobrand" /> 
+        <div class="logo">
+         <img class="brand-logo" src={carritobrand} alt="Carritobrand" /> 
+         </div>
         );
 }
 

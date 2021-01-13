@@ -2,24 +2,46 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./css/estilo.css";
 import Header from "./Header";
-import Main from "./Main"
-import Footer from "./Footer"
-import './css/bootstrap.min.css'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Productos from "./components/productos.json"
+import ItemListDetailed from "./components/ItemDetailContainer"
+import ItemListContainer from "./components/ItemListContainer"
+import Footer from "./Footer";
+
+
 
 function App() {
 
 
-
-
-
-
     return (
-        <>
+        <BrowserRouter>
             <Header />
-            <Main />
+            <main class="row">
+                <div className="main">
+                    <Switch>
+
+                        <Route path="/" exact>
+                            <ItemListContainer greeting="Las mejores peliculas!" pelicula={Productos} />
+                        </Route>
+
+                        <Route path="/category/:id">
+                            <ItemListContainer />
+                        </Route>
+
+                        <Route path="/id/:id">
+                            <ItemListDetailed pelicula={Productos} />
+                        </Route>
+
+                    </Switch>
+                </div>
+           </main>
             <Footer />
-        </>
+        </BrowserRouter>
+        
+
     );
 }
 
 export default App;
+
+

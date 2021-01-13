@@ -1,30 +1,38 @@
 [
     {
-        "id": "01",
+        "id": "1",
         "title": "The Matrix Saga",
         "description": "Saga The Matrix en formato DVD",
         "price": "500",
+        "synopsis":"Neo (Keanu Reeves) believes that Morpheus (Laurence Fishburne), an elusive figure considered to be the most dangerous man alive, can answer his question -- What is the Matrix? Neo is contacted by Trinity (Carrie-Anne Moss), a beautiful stranger who leads him into an underworld where he meets Morpheus. They fight a brutal battle for their lives against a cadre of viciously intelligent secret agents. It is a truth that could cost Neo something more precious than his life.",
         "pictureUrl": "https://www.filmsite.org/photos/matrix-poster.jpg"
     },
     {
+        "category": "2",
         "id": "02",
         "title": "Blade Runner",
         "description": "Pelicula Blade Runner en formato DVD",
         "price": "550",
+        "synopsis":"Deckard (Harrison Ford) is forced by the police Boss (M. Emmet Walsh) to continue his old job as Replicant Hunter. His assignment: eliminate four escaped Replicants from the colonies who have returned to Earth. Before starting the job, Deckard goes to the Tyrell Corporation and he meets Rachel (Sean Young), a Replicant girl he falls in love with",
         "pictureUrl": "https://www.filmsite.org/posters/bladerunner.jpg"
     },
     {
+        "category": "3",
         "id": "03",
         "title": "2001: A Space Odyssey",
         "description": "Pelicula 2001: A Space Odyssey en formato DVD",
+        "synopsis":"An imposing black structure provides a connection between the past and the future in this enigmatic adaptation of a short story by revered sci-fi author Arthur C. Clarke. When Dr. Dave Bowman (Keir Dullea) and other astronauts are sent on a mysterious mission, their ship's computer system, HAL, begins to display increasingly strange behavior, leading up to a tense showdown between man and machine that results in a mind-bending trek through space and time.",
         "price": "600",
+
         "pictureUrl": "https://www.filmsite.org/posters/2001-2.jpg"
     },
     {
+        "category": "4",
         "id": "04",
         "title": "A Clockwork Orange",
         "description": "Pelicula  Clockwork Orange en formato DVD",
         "price": "600",
+        "synopsis":"In an England of the future, Alex (Malcolm McDowell) and his 'Droogs' spend their nights getting high at the Korova Milkbar before embarking on 'a little of the old ultraviolence,' while jauntily warbling 'Singin' in the Rain.' After he's jailed for bludgeoning the Cat Lady to death, Alex submits to behavior modification technique to earn his freedom; he's conditioned to abhor violence. Returned to the world defenseless, Alex becomes the victim of his prior victims.",
         "pictureUrl": "https://www.filmsite.org/posters/clockworkorange2.jpg"
     }
 ]
