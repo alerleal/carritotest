@@ -4,14 +4,25 @@ import ItemCount from "./ItemCount"
 
 const ItemDetail = ({ pelicula }) => {
 
+
+    
+
+    const onAdd = ({params}) => {
+                
+    }
+
     return (
+
         <div className="mostrarItem">
+                    {/* MostrarItem */}
+
+          
+
             <div class="row">
                 <div class="col s12 m4">
                     <div class="card">
                         <div class="card-image">
                             <img src={pelicula.pictureUrl}></img>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                         </div>
                         <div class="card-content">
                             <h4 class="card-title">{pelicula.title}</h4>
@@ -23,9 +34,15 @@ const ItemDetail = ({ pelicula }) => {
                         </div>
                     </div>
                 </div>
+
+                {/* componente ItemCount */}
                 <ItemCount stock={10} initial={0} />
+                <br/>
+                <button class="waves-effect waves-light btn"> Terminar compra! </button>
+                
                 <br />
                 <br />
+                {/* Boton para volver! */}
                 <NavLink to={`/`} class="waves-effect waves-light btn">Volver</NavLink>
 
                 
