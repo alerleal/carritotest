@@ -35,4 +35,22 @@ nav{
 
 footer{
   background-color: #202020 !important;
+
+}
+
+main{
+  bottom: 200px;
+}
+#carroDeCompra{
+  float: right;
+  margin-top: 60px;
+  margin-right: 30px;
+}
+
+#botonContext {
+  margin: 20px;
+}
+
+#ul{
+  
 }

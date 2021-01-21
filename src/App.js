@@ -1,4 +1,5 @@
 import React from "react";
+import {useContext, createContext} from "react";
 import ReactDOM from "react-dom";
 import "./css/estilo.css";
 import Header from "./Header";
@@ -7,6 +8,7 @@ import Productos from "./components/productos.json"
 import ItemListDetailed from "./components/ItemDetailContainer"
 import ItemListContainer from "./components/ItemListContainer"
 import Footer from "./Footer";
+import CartContext from "./components/CartContext";
 
 
 
@@ -30,6 +32,9 @@ function App() {
 
                         <Route path="/id/:id">
                             <ItemListDetailed pelicula={Productos} />
+                        </Route>
+                        <Route path="/CartContext">
+                            <CartContext  />
                         </Route>
 
                     </Switch>

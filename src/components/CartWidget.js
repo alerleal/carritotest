@@ -3,7 +3,11 @@ import Carro from "./img/carro1.png"
 
 function CartWidget() {
     return (
-        <img src={Carro} alt="Carro" width="100" height="100" />
+
+        <a href="/CartContext">
+            <img id="carroDeCompra" src={Carro} alt="Carro" width="55" height="50" />
+        </a>
+
     )
 }
 
