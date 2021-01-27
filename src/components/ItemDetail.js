@@ -5,11 +5,8 @@ import ItemCount from "./ItemCount"
 const ItemDetail = ({ pelicula }) => {
 
 
-    
 
-    const onAdd = ({params}) => {
-                
-    }
+    
 
     return (
 
@@ -17,7 +14,7 @@ const ItemDetail = ({ pelicula }) => {
                     {/* MostrarItem */}
 
           
-
+            
             <div class="row">
                 <div class="col s12 m4">
                     <div class="card">
@@ -36,9 +33,8 @@ const ItemDetail = ({ pelicula }) => {
                 </div>
 
                 {/* componente ItemCount */}
-                <ItemCount stock={10} initial={0} />
+                <ItemCount stock={pelicula.stock} initial={0} />
                 <br/>
-                <button class="waves-effect waves-light btn"> Terminar compra! </button>
                 
                 <br />
                 <br />

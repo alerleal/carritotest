@@ -1,19 +1,37 @@
-import React from "react";
-import {useContext, createContext} from "react";
+import React ,{useEffect,useState} from "react";
+import { useContext, createContext } from "react";
 import ReactDOM from "react-dom";
 import "./css/estilo.css";
 import Header from "./Header";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Productos from "./components/productos.json"
-import ItemListDetailed from "./components/ItemDetailContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer"
 import ItemListContainer from "./components/ItemListContainer"
 import Footer from "./Footer";
 import CartContext from "./components/CartContext";
+import {firestore} from  './firebase';
 
 
+const App = () => {
 
-function App() {
+    const [peliculas, setPeliculas] = useState([]);
 
+    useEffect(() => {
+        const db = firestore;
+        const collection = db.collection("peliculas");
+        const query = collection.get()
+
+        query
+            .then((resultado) => {
+                setPeliculas(resultado.docs.map((peli) => ({
+                    id: peli.id,
+                    ...peli.data()
+                }))                
+            )
+            })
+            .catch(() => {
+                console.log("fallo")
+            })
+    }, [peliculas])
 
     return (
         <BrowserRouter>
@@ -23,7 +41,7 @@ function App() {
                     <Switch>
 
                         <Route path="/" exact>
-                            <ItemListContainer greeting="Las mejores peliculas!" pelicula={Productos} />
+                            <ItemListContainer greeting="Las mejores peliculas!" pelicula={peliculas} />
                         </Route>
 
                         <Route path="/category/:id">
@@ -31,18 +49,18 @@ function App() {
                         </Route>
 
                         <Route path="/id/:id">
-                            <ItemListDetailed pelicula={Productos} />
+                            <ItemDetailContainer pelicula={peliculas}/>
                         </Route>
                         <Route path="/CartContext">
-                            <CartContext  />
+                            <CartContext />
                         </Route>
 
                     </Switch>
                 </div>
-           </main>
+            </main>
             <Footer />
         </BrowserRouter>
-        
+
 
     );
 }

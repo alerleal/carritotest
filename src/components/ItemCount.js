@@ -21,8 +21,8 @@ const ItemCount = ({ stock, initial}) => {
         setContador(contador - 1);
     };
 
-    const agregarItem = () => {
-        return (contador);
+    const onAdd = () => {
+        return contador;
     }
 
     return (
@@ -33,7 +33,7 @@ const ItemCount = ({ stock, initial}) => {
             <p className="ItemCount" >El contador va {contador} </p>
             <button className="ItemCount" type="button" class="btn btn-secondary" onClick={restarItem}> - </button>
             <br />
-            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={agregarItem}>agregar</button>
+            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={onAdd}>agregar</button>
 
         </div>
     )
