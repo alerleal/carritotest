@@ -8,7 +8,7 @@ const ItemList = ({ pelicula }) => {
         <>
             { pelicula.map(peli => {
                 return(
-                    <Item  title={peli.title} description={peli.description} price={peli.price} pictureUrl={peli.pictureUrl} />
+                    <Item id={peli.id} title={peli.title} description={peli.description} price={peli.price} pictureUrl={peli.pictureUrl} />
                 )
             })
         }

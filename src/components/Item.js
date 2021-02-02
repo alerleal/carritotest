@@ -24,12 +24,11 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
                         </div>
                         <div>
                             <p>Ver detalle...</p>
-                            <NavLink to={`/id/${id}`} class="large material-icons">keyboard_arrow_down</NavLink>
+                            <NavLink to={`/idPelicula/${id}`} class="large material-icons">keyboard_arrow_down</NavLink>
 
                         </div>
 
                     </div>
-                    <ItemCount stock={10} initial={0} />
                 </div>
 
                

@@ -6,7 +6,6 @@ const ItemDetail = ({ pelicula }) => {
 
 
 
-    
 
     return (
 
