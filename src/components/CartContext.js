@@ -1,54 +1,50 @@
-import React, {useState, useEffect} from 'react'
+import react, { useState, useContext, createContext } from 'react';
+
+export const CartContext = createContext();
 
 
-function CartContext({ pelicula, quantity }) {
 
-    const [carrito, setCarrito] = useState([])
-    const [nombre, setNombre] = useState("")
-    const [cel, setCel] = useState("")
-    const [email, setEmail] = useState("")
-    
-    let addItem = (pelicula, quantity) => {
+export const CartProvider = ({ children }) => {
 
+    const [arrayPeliculas, setArrayPeliculas] = useState([])
+    const [cantidad, setCantidad] = useState(0)
+
+    const addItem = ({ id, title, pictureUrl, price, quantity }) => {
+
+        let peliId = id;
+        console.log(peliId);
+        let peliTitle = title;
+        let peliPictureUrl = pictureUrl;
+        let peliPrice = price;
+
+        setArrayPeliculas([...arrayPeliculas, { id: peliId, title: peliTitle, pictureUrl: peliPictureUrl, price: peliPrice }])
+        setCantidad(quantity)
+    }
+
+    const removeItem = (id) => {
 
     }
 
-    let removeItem = ({ id }) => {
-
+    const isInCart = (id) => {
+        const peli = arrayPeliculas.find(p => p.id === id)
+        if (peli === undefined) {
+            return false
+        }
+        else {
+            return true
+        }
     }
 
-    let clear = () => {
-
-    }
-
-    let isInCart = (id) => {
-
+    const clear = () => {
+        setArrayPeliculas([])
     }
 
     return (
-        <div class="center align">
-            <ul id="ul">
-             <li><button id="botonContext" class="waves-effect waves-light btn" onClick={()=>setCarrito([])}> Agregar compra</button></li>
-             <li><button id="botonContext" class="waves-effect waves-light btn" onClick={removeItem}>Eliminar compra</button></li>
-             <li><button id="botonContext" class="waves-effect waves-light btn" onClick={clear}>Limpiar carrito</button></li>
-            </ul>
-
-            <h4>Datos de compra</h4>
-            <form  class="col s12">
-                <div class="input-field col s6">
-                    <input onChange={e=>{setNombre(e.target.value)}} type="text" placeholder="Ingresa tu Nombre:" value={nombre}/>
-                </div>
-                <div class="input-field col s6">
-                    <input onChange={e=>{setCel(e.target.value)}} type="tel" placeholder="Ingresa tu Cel:" value={cel}/>
-                </div>
-                <div class="input-field col s6">
-                    <input onChange={e=>{setEmail(e.target.value)}} type="email" placeholder="Ingresa tu Email:" value={email}/>
-                </div>
-
-                <button class="waves-effect waves-light btn">Comprar</button>
-            </form>
-        </div>
+        <CartContext.Provider value={{ arrayPeliculas, cantidad, addItem, removeItem, clear, isInCart }}>
+            {children}
+        </CartContext.Provider>
     )
 }
 
-export default CartContext
+
+export default CartProvider;

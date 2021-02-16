@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CartContext } from './CartContext'
 
 
 
 
-const ItemCount = ({ stock, initial}) => {
+const ItemCount = ({ pelicula, stock, initial, id }) => {
 
     const [contador, setContador] = useState(initial);
 
 
+    const { addItem } = useContext(CartContext)
+
+   
+
 
     const sumarItem = () => {
-        if(contador < stock)
-        setContador(contador + 1);
+        if (contador < stock)
+            setContador(contador + 1);
 
     };
 
 
     const restarItem = () => {
-        if(contador > initial)
-        setContador(contador - 1);
+        if (contador > initial)
+            setContador(contador - 1);
     };
 
-    const onAdd = () => {
-        return contador;
-    }
+
+    addItem(pelicula, contador, id);
 
     return (
 
@@ -33,7 +37,8 @@ const ItemCount = ({ stock, initial}) => {
             <p className="ItemCount" >El contador va {contador} </p>
             <button className="ItemCount" type="button" class="btn btn-secondary" onClick={restarItem}> - </button>
             <br />
-            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={onAdd}>agregar</button>
+
+            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={addItem(pelicula,contador, id)}>agregar</button>
 
         </div>
     )

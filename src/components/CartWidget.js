@@ -4,7 +4,7 @@ import Carro from "./img/carro1.png"
 function CartWidget() {
     return (
 
-        <a href="/CartContext">
+        <a href="/Cart">
             <img id="carroDeCompra" src={Carro} alt="Carro" width="55" height="50" />
         </a>
 
