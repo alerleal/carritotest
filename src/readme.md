@@ -45,7 +45,7 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Contribuyendo 🖇️
 
-(https://gist.github.com/alerleal/carritoweb) 
+(https://github.com/alerleal/carritoweb) 
 
 ## Autores ✒️
 

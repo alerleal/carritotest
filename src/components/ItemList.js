@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Item from './Item'
+import Loader from './Loader'
 
 
 
-const ItemList = ({ pelicula }) => {
+const ItemList = ( {pelicula} ) => {
+
+
+
+
     return (
-        <>
-            { pelicula.map(peli => {
-                return(
-                    <Item id={peli.id} title={peli.title} description={peli.description} price={peli.price} pictureUrl={peli.pictureUrl} />
+        <div className="col">
+            {pelicula.length > 0
+            ? pelicula.map(item=>{
+                return (
+                    <Item key={item.id} id={item.id} title={item.title} description={item.description} price={item.price} pictureUrl={item.pictureUrl}/>
                 )
             })
-        }
-            
-        </>
+            : <Loader/>}
+        </div>
     )
 }
 

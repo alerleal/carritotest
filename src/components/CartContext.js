@@ -1,24 +1,21 @@
-import react, { useState, useContext, createContext } from 'react';
+import react, { useState, useEffect, createContext } from 'react';
+
 
 export const CartContext = createContext();
 
 
+const CartProvider = ({ children }) => {
 
-export const CartProvider = ({ children }) => {
 
+
+    const [idPelicula, setIdPelicula] = useState([])
     const [arrayPeliculas, setArrayPeliculas] = useState([])
     const [cantidad, setCantidad] = useState(0)
 
-    const addItem = ({ id, title, pictureUrl, price, quantity }) => {
+    const addItem = ({ id, contador }) => {
 
-        let peliId = id;
-        console.log(peliId);
-        let peliTitle = title;
-        let peliPictureUrl = pictureUrl;
-        let peliPrice = price;
-
-        setArrayPeliculas([...arrayPeliculas, { id: peliId, title: peliTitle, pictureUrl: peliPictureUrl, price: peliPrice }])
-        setCantidad(quantity)
+        setIdPelicula([id])
+        setCantidad(contador)
     }
 
     const removeItem = (id) => {
@@ -39,6 +36,44 @@ export const CartProvider = ({ children }) => {
         setArrayPeliculas([])
     }
 
+
+    /* ----------------------- */
+
+    // useEffect(() => {
+    //     const db = peliculas;
+    //     console.log(peliculas)
+    //     const collection = db.collection("peliculas");
+    //     const query = collection.get()
+    //     query
+    //         .then((resultado) => {
+
+    //             setArrayPeliculas(resultado.docs.map((peli) => {
+    //                 if (idPelicula == peli.id) {
+    //                     (
+
+    //                         {
+    //                             id: peli.id,
+    //                             ...peli.data()
+    //                         }
+
+    //                     )
+    //                 }
+
+
+    //             }
+    //             )
+    //             )/* setPeliculas */
+    //         })
+    //         .catch(() => {
+    //             console.log("fallo")
+    //         })
+
+
+    // }, [])
+    // /* ----------------------- */
+
+
+    
     return (
         <CartContext.Provider value={{ arrayPeliculas, cantidad, addItem, removeItem, clear, isInCart }}>
             {children}

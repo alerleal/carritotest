@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ItemCount from "./ItemCount"
 
 
@@ -7,6 +7,7 @@ import ItemCount from "./ItemCount"
 const Item = ({ id, title, description, price, pictureUrl }) => {
 
 
+   
 
 
     return (
@@ -23,15 +24,13 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
                             <p>Precio: {price}</p>
                         </div>
                         <div>
-                            <p>Ver detalle...</p>
-                            <NavLink to={`/idPelicula/${id}`} class="large material-icons">keyboard_arrow_down</NavLink>
-
+                            <Link to={`/idPelicula/${id}`} >Ver Producto</Link>
                         </div>
 
                     </div>
                 </div>
 
-               
+
             </div>
         </div>
 

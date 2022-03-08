@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import ItemCount from "./ItemCount"
 
-const ItemDetail = ({ pelicula }) => {
+const ItemDetail = ({ pelicula}) => {
 
- 
+    
 
 
     return (
@@ -13,6 +13,7 @@ const ItemDetail = ({ pelicula }) => {
             {/* MostrarItem */}
 
 
+            console.log()
 
             <div class="row">
                 <div class="col s12 m4">
@@ -24,17 +25,22 @@ const ItemDetail = ({ pelicula }) => {
                             <h4 class="card-title">{pelicula.title}</h4>
                             <p>{pelicula.description}</p>
                             <br />
-                            <p>{pelicula.synopsis}</p>
+                            <p>{ }</p>
                             <br />
                             <p>Precio: {pelicula.price}</p>
+
                         </div>
                     </div>
                 </div>
 
                 {/* componente ItemCount */}
-                <ItemCount pelicula={pelicula} stock={pelicula.stock} initial={0} />
+
+                <ItemCount id={pelicula.id} stock={pelicula.stock} initial={0} />
+
+
+
                 <br />
-                
+
                 <br />
                 <br />
                 {/* Boton para volver! */}

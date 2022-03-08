@@ -4,15 +4,14 @@ import { CartContext } from './CartContext'
 
 
 
-const ItemCount = ({ pelicula, stock, initial, id }) => {
+const ItemCount = ( {id, stock, initial}) => {
+
+
 
     const [contador, setContador] = useState(initial);
 
 
     const { addItem } = useContext(CartContext)
-
-   
-
 
     const sumarItem = () => {
         if (contador < stock)
@@ -27,7 +26,8 @@ const ItemCount = ({ pelicula, stock, initial, id }) => {
     };
 
 
-    addItem(pelicula, contador, id);
+  
+
 
     return (
 
@@ -37,8 +37,11 @@ const ItemCount = ({ pelicula, stock, initial, id }) => {
             <p className="ItemCount" >El contador va {contador} </p>
             <button className="ItemCount" type="button" class="btn btn-secondary" onClick={restarItem}> - </button>
             <br />
+            { contador > 0 ? <button className="ItemCount" type="button" class="btn btn-secondary" onClick={() => addItem({id, contador})} >Agregar</button> : <p>Eliga la cantidad del producto a llevar</p>
 
-            <button className="ItemCount" type="button" class="btn btn-secondary" onClick={addItem(pelicula,contador, id)}>agregar</button>
+
+            }
+
 
         </div>
     )
